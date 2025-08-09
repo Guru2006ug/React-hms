@@ -107,7 +107,7 @@ const Review = () => {
     useEffect(() => {
         const interval = setInterval(handleNext, 3000);
         return () => clearInterval(interval);
-    }, []);
+    }, [handleNext]);
 
     useEffect(() => {
         if (containerRef.current) {
@@ -158,4 +158,4 @@ const Review = () => {
     );
 };
 
-export default Review; 
+export default Review;

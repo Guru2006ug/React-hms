@@ -176,7 +176,7 @@ const Login = () => {
                 </div>
                 <div className="Remember-Forgot">
                   <label><input type="checkbox" /> Remember me</label>
-                  <a href="#">Forgot password?</a>
+                  <a href="/">Forgot password?</a>
                 </div>
                 <button id="SigninButton" onClick={handleSignIn}>Sign In</button>
                 <div className="Register-Link">
