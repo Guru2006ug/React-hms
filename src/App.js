@@ -1,24 +1,30 @@
-import logo from './logo.svg';
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Navigation from './components/Navigation';
+import HospitalOverview from './components/HospitalOverview';
+import Locations from './components/Locations';
+import FindDoctor from './components/FindDoctor';
+import Login from './components/Login';
+import Review from './components/Review';
+import Footer from './components/Footer';
 import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-         Welcome to the Home Page
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router basename={process.env.PUBLIC_URL}>
+      <Navigation />
+      <Routes>
+        <Route path="/" element={<HospitalOverview />} />
+        <Route path="/patient-management" element={<Locations />} />
+        <Route path="/doctor" element={<FindDoctor />} />
+        <Route path="/appointments" element={<div>Appointments Page</div>} />
+        <Route path="/departments" element={<div>Departments Page</div>} />
+        <Route path="/reports" element={<div>Reports Page</div>} />
+        <Route path="/login" element={<Login />} />
+      </Routes>
+      <Review />
+      <Footer />
+    </Router>
   );
 }
 
